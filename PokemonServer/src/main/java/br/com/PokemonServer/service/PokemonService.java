@@ -44,6 +44,11 @@ public class PokemonService {
         return nomes;
     }
     
+    /** 
+     * BigΩ: sortPokemonsPorOrdemAlfabetica
+     * No melhor caso, quando os Pokémon já estão em ordem alfabética, o algoritmo tem complexidade O(n). 
+     * No pior caso, quando os Pokémon estão em ordem inversa, a complexidade é O(n^2).
+     */  
     // Método para listar nomes de Pokémons em ordem alfabética
     public List<String> sortPokemonsPorOrdemAlfabetica(List<String> nomes) {
         int n = nomes.size();
@@ -63,6 +68,11 @@ public class PokemonService {
         return nomes;
     }
     
+    /** 
+     * BigΩ: sortPokemonsPorComprimento
+     * No melhor caso, quando os Pokémon já estão em ordem alfabética, o algoritmo tem complexidade O(n). 
+     * No pior caso, quando os Pokémon estão em ordem inversa, a complexidade é O(n^2).
+     */
  // lista nomes de Pokémons por comprimento
     public List<String> sortPokemonsPorComprimento(List<String> nomes) {
         int n = nomes.size();

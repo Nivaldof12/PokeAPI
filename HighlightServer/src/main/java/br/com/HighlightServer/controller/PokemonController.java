@@ -1,11 +1,10 @@
 package br.com.HighlightServer.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.HighlightServer.domain.DestaqueDTO;
@@ -13,7 +12,7 @@ import br.com.HighlightServer.domain.DestaqueReturn;
 import br.com.HighlightServer.service.PokemonService;
 
 @RestController
-@RequestMapping("/pokemon")
+@RequestMapping("/pokemon/highlight")
 public class PokemonController {
 
     private final PokemonService pokemonService;
@@ -21,62 +20,34 @@ public class PokemonController {
     public PokemonController(PokemonService pokemonService) {
         this.pokemonService = pokemonService;
     }
-    
-    // Retorna todos os Pokémons e highlight
-    @GetMapping("/highlight")
-    public DestaqueReturn getTodosOsPokemonsHighlight() {
-        List<DestaqueDTO> nomes = pokemonService.getTodosPokemonsHighlight();
-        return new DestaqueReturn(nomes);
-    }
-    
-    // Retorna todos os Pokémon em ordem alfabética
-    @GetMapping("/highlight/ordenar")
-    public DestaqueReturn getTodosOsPokemonsEmOrdemAlfabetica() {
-        List<String> names = pokemonService.getBuscarTodosPokemons();
-        pokemonService.sortOrdenarLista(names);
-        
-        List<DestaqueDTO> result = new ArrayList<>();
-        for (String name : names) {
-            result.add(new DestaqueDTO(name, name));
+
+    // Endpoint para buscar nomes de Pokémon com opções de consulta, ordenação e comprimento
+    @GetMapping
+    public DestaqueReturn getPokemons(
+        @RequestParam(name = "consulta", required = false) String consulta,
+        @RequestParam(name = "ordenar", required = false) boolean ordenar,
+        @RequestParam(name = "comprimento", required = false) boolean comprimento
+    ) {
+        List<DestaqueDTO> nomes;
+
+        if (consulta != null) {
+        	// Consulta para pesquisar Pokémons por nome ou iniciais
+            nomes = pokemonService.getPokemonsPorConsulta(consulta);
+        } else {
+        	// Consultar Todos os Pokémons
+            nomes = pokemonService.getTodosPokemonsHighlight();
         }
-        
-        return new DestaqueReturn(result);
-    }
-    
-    // Retorna todos os Pokémon ordenados por comprimento do nome
-    @GetMapping("/highlight/comprimento")
-    public DestaqueReturn getTodosOsPokemonsPorTamanho() {
-    	DestaqueReturn response = getTodosOsPokemonsHighlight();
-        List<DestaqueDTO> result = response.getResult();
-        pokemonService.sortPokemonPorComprimento(result);
-        response.setResult(result);
-        return response;
-    }
-    
-    // Retorna uma consulta de Pokémons
-    @GetMapping("/highlight/{consulta}")
-    public DestaqueReturn getPokemonsConsulta(@PathVariable String consulta) {
-        List<DestaqueDTO> result = pokemonService.getPokemonsPorConsulta(consulta);
-        return new DestaqueReturn(result);
-    }
-    
-    // Retorna uma consulta de Pokémons em ordem alfabética
-    @GetMapping("/highlight/{consulta}/ordenar")
-    public DestaqueReturn getPokemonsPorOrdemEConsulta(@PathVariable String consulta) {
-    	DestaqueReturn response = getPokemonsConsulta(consulta);
-        List<DestaqueDTO> result = response.getResult();
-        pokemonService.sortPokemonEmOrdemAlfabetica(result);
-        response.setResult(result);
-        return response;
-    }
-    
-    // Retorna uma consulta de Pokémons por comprimento do nome
-    @GetMapping("/highlight/{consulta}/comprimento")
-    public DestaqueReturn getPokemonsPorComprimentoEConsulta(@PathVariable String consulta) {
-    	DestaqueReturn response = getPokemonsConsulta(consulta);
-        List<DestaqueDTO> result = response.getResult();
-        pokemonService.sortPokemonPorComprimento(result);
-        response.setResult(result);
-        return response;
+
+        if (ordenar) {
+        	// Se ordenar for true os nomes devem ser ordenados em ordem alfabética
+            pokemonService.sortPokemonEmOrdemAlfabetica(nomes);
+        }
+
+        if (comprimento) {
+        	//Se comprimento for true os nomes devem ser ordenados por comprimento
+            pokemonService.sortPokemonPorComprimento(nomes);
+        }
+
+        return new DestaqueReturn(nomes);
     }
 }

@@ -59,7 +59,11 @@ public class PokemonService {
 
         return destaqueDTO;
     }
-    
+    /** 
+     * BigΩ: sortPokemonEmOrdemAlfabetica
+     * No melhor caso, quando os Pokémon já estão em ordem alfabética, o algoritmo tem complexidade O(n). 
+     * No pior caso, quando os Pokémon estão em ordem inversa, a complexidade é O(n^2).
+     */    
     // Função para ordenar manualmente os Pokémon em ordem alfabética crescente pelo nome
     public void sortPokemonEmOrdemAlfabetica(List<DestaqueDTO> result) {
         for (int i = 0; i < result.size() - 1; i++) {
@@ -76,6 +80,11 @@ public class PokemonService {
         }
     }
     
+    /** 
+     * BigΩ: sortPokemonPorComprimento
+     * Pokémon já estão ordenados pelo comprimento do nome, o algoritmo terá complexidade O(n). 
+     * No entanto, no pior caso, quando os Pokémon estão em ordem inversa, a complexidade será O(n^2).
+     */   
     // Função para ordenar manualmente os Pokémon em destaque por comprimento do nome
     public void sortPokemonPorComprimento(List<DestaqueDTO> result) {
         for (int i = 0; i < result.size() - 1; i++) {
@@ -91,6 +100,13 @@ public class PokemonService {
             }
         }
     }
+    
+  /**
+  * BigΩ: sortOrdenarLista  
+  * Quando a lista está muito desordenada, o algoritmo faz várias passagens pela lista, 
+  * resultando em uma complexidade O(n^2).
+  * 
+  */
     
  // Retorna a lista em ordem alfabética em ordem crescente
     public void sortOrdenarLista(List<String> list) {
