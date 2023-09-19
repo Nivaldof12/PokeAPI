@@ -21,28 +21,28 @@ A ideia por trás desse endpoint é poder pesquisar por pokémons pelo seu nome 
 
 **Ordenar**
     
-  - **Consulta null**: Se não passar a consulta: `GET /pokemon?ordenar`, a lista exibe todos os pokemons da PokeAPI em ordem alfabética em ordem crescente.
+  - **Consulta null**: Se não passar a consulta: `GET /pokemons?ordenar`, a lista exibe todos os pokemons da PokeAPI em ordem alfabética em ordem crescente.
 
-  - **Consulta not null**: Se a consulta não for vazia, exemplo: `GET /pokemon?consulta=pidge&ordenar=true`, a lista exibe os pokemons por nome ou iniciais, ordem alfabética e em ordem crescente. Nesse Exemplo:
-    - Entrada: `GET /pokemon?consulta=pidge&ordenar=true`
+  - **Consulta not null**: Se a consulta não for vazia, exemplo: `GET /pokemons?consulta=pidge&ordenar=true`, a lista exibe os pokemons por nome ou iniciais, ordem alfabética e em ordem crescente. Nesse Exemplo:
+    - Entrada: `GET /pokemons?consulta=pidge&ordenar=true`
     - Saída: ```{"result" : ["pidgeot", "pidgeot-mega", "pidgeotto", "pidgey"]}```
    
 **Comprimento**
 
-  - **Consulta null**: Se não passar a consulta: `GET /pokemon?comprimento`, a lista exibe todos os pokemons da PokeAPI ordenados por comprimento do menor nome para o maior.
+  - **Consulta null**: Se não passar a consulta: `GET /pokemons?comprimento`, a lista exibe todos os pokemons da PokeAPI ordenados por comprimento do menor nome para o maior.
 
-  - **Consulta not null**: Se a consulta não estiver vazia, exemplo: `GET /pokemon?consulta=pidge&comprimento=true`, a lista exibe os pokemons por nome ou iniciais, por comprimento e em ordem crescente. Nesse Exemplo:
-    - Entrada: `GET /pokemon?consulta=pidge&comprimento=true`
+  - **Consulta not null**: Se a consulta não estiver vazia, exemplo: `GET /pokemons?consulta=pidge&comprimento=true`, a lista exibe os pokemons por nome ou iniciais, por comprimento e em ordem crescente. Nesse Exemplo:
+    - Entrada: `GET /pokemons?consulta=pidge&comprimento=true`
     - Saída: ```{"result" : ["pidgey", "pidgeot", "pidgeotto", "pidgeot-mega"]}```
    
 ## **2. GET /pokemons/highlight**
 
 Este endpoint tem, em sua maioria, os mesmos requisitos que o primeiro (deve receber os mesmos parâmetros da mesma maneira), a única diferença é o requisito de resposta: ao lado do nome do pokémon, a resposta também deve destacar a substring que correspondeu ao nome do pokémon. A maneira como você deve fazer isso é cercando a substring com `<pre> </pre>`. Se a consulta estiver vazia, ela deve considerar todos os pokemons listados na PokeAPI.
 
-- **Consulta null**: Se a consulta estiver vazia: `GET /pokemon/highlight`, a lista exibe todos os pokemons da PokeAPI.
+- **Consulta null**: Se a consulta estiver vazia: `GET /pokemons/highlight`, a lista exibe todos os pokemons da PokeAPI.
 
-- **Consulta not null**: Se a consulta não for vazia, exemplo: `GET /pokemon/highlight?consulta=pidge`, a lista exibe os pokemons por nome ou iniciais. Nesse caso:
-  - Entrada: `GET /pokemon/highlight?consulta=pidge`
+- **Consulta not null**: Se a consulta não for vazia, exemplo: `GET /pokemons/highlight?consulta=pidge`, a lista exibe os pokemons por nome ou iniciais. Nesse caso:
+  - Entrada: `GET /pokemons/highlight?consulta=pidge`
   - Saída:
 
 ```JSON
@@ -70,10 +70,10 @@ Este endpoint tem, em sua maioria, os mesmos requisitos que o primeiro (deve rec
 
 **Ordenar**
     
-  - **Consulta null**: Se não passar a consulta: `GET /pokemon/highlight?ordenar`, a lista exibe todos os pokemons da PokeAPI em ordem alfabética em ordem crescente.
+  - **Consulta null**: Se não passar a consulta: `GET /pokemons/highlight?ordenar`, a lista exibe todos os pokemons da PokeAPI em ordem alfabética em ordem crescente.
 
-  - **Consulta not null**: Se a consulta não for vazia, exemplo: `GET /pokemon/highlight?consulta=pidge&ordenar=true`, a lista exibe os pokemons por nome ou iniciais, ordem alfabética e em ordem crescente. Nesse Exemplo:
-    - Entrada: `GET /pokemon/highlight?consulta=pidge&ordenar=true`
+  - **Consulta not null**: Se a consulta não for vazia, exemplo: `GET /pokemons/highlight?consulta=pidge&ordenar=true`, a lista exibe os pokemons por nome ou iniciais, ordem alfabética e em ordem crescente. Nesse Exemplo:
+    - Entrada: `GET /pokemons/highlight?consulta=pidge&ordenar=true`
     - Saída:
   
   ```JSON
@@ -101,10 +101,10 @@ Este endpoint tem, em sua maioria, os mesmos requisitos que o primeiro (deve rec
    
 **Comprimento**
 
-  - **Consulta null**: Se não passar a consulta: `GET /pokemon/highlight?comprimento`, a lista exibe todos os pokemons da PokeAPI ordenados por comprimento do menor nome para o maior.
+  - **Consulta null**: Se não passar a consulta: `GET /pokemons/highlight?comprimento`, a lista exibe todos os pokemons da PokeAPI ordenados por comprimento do menor nome para o maior.
 
-  - **Consulta not null**: Se a consulta não estiver vazia, exemplo: `GET /pokemon/highlight?consulta=pidge&comprimento=true`, a lista exibe os pokemons por nome ou iniciais, por comprimento e em ordem crescente. Nesse Exemplo:
-    - Entrada: `GET /pokemon/highlight?consulta=pidge&comprimento=true`
+  - **Consulta not null**: Se a consulta não estiver vazia, exemplo: `GET /pokemons/highlight?consulta=pidge&comprimento=true`, a lista exibe os pokemons por nome ou iniciais, por comprimento e em ordem crescente. Nesse Exemplo:
+    - Entrada: `GET /pokemons/highlight?consulta=pidge&comprimento=true`
     - Saída:
 
    ```JSON
