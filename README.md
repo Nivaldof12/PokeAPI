@@ -129,3 +129,18 @@ Este endpoint tem, em sua maioria, os mesmos requisitos que o primeiro (deve rec
     ]
 }
 ```   
+## Fora do escopo:
+
+- [Java Records](https://www.baeldung.com/java-record-keyword)
+- Qualquer biblioteca de classificação, nem qualquer coisa relacionada à classificação da Biblioteca Padrão Java/Kotlin, isso inclui: `Collections.sort`, `Collections.swap`, `Comparators`, etc.
+- Qualquer biblioteca de cache (se você deseja implementar o cache, você deve implementá-lo manualmente).
+- Qualquer biblioteca do agendador automático de tarefas (para tarefas recorrentes). Se você deseja implementar um recurso que usa agendamento automático de tarefas, você deve usar apenas Java/Kotlin Standard Library ou suas próprias classes e métodos.
+- AQualquer coisa que gere código automaticamente ou gere implementações automáticas para interfaces/classes abstratas, como: [Lombok](https://projectlombok.org/features/all), [Feign Client](https://docs.spring.io/spring-cloud-openfeign/docs/current/reference/html), [Retrofit2](https://square.github.io/retrofit), [Spring Repositories](https://docs.spring.io/spring-data/data-commons/docs/1.6.1.RELEASE/reference/html/repositories.html) (não confunda com [Spring Stereotypes](http://blog.triadworks.com.br/entendendo-os-stereotypes-do-spring)), etc
+
+## Requisitos não funcionais
+
+- Você precisa **explicar** sua lógica implementada do algoritmo de classificação usado (por exemplo, você pode usar comentários embutidos no código-fonte).
+- Explique o **Big-Ω** de seus algoritmos de classificação.
+- O projeto deve consumir e expor TODOS os pokémons existentes da **PokéAPI**.
+- Desenhe um **diagrama** explicando sua arquitetura.
+- Sua API deve ser criada com desempenho e capacidade de manutenção em mente.
