@@ -21,7 +21,7 @@ A ideia por trás desse endpoint é poder pesquisar por pokémons pelo seu nome 
 
 **Ordenar**
     
-  - **Consulta null**: Se não passar a consulta: `GET /pokemons?ordenar`, a lista exibe todos os pokemons da PokeAPI em ordem alfabética em ordem crescente.
+  - **Consulta null**: Se não passar a consulta: `GET /pokemons?ordenar=true`, a lista exibe todos os pokemons da PokeAPI em ordem alfabética em ordem crescente.
 
   - **Consulta not null**: Se a consulta não for vazia, exemplo: `GET /pokemons?consulta=pidge&ordenar=true`, a lista exibe os pokemons por nome ou iniciais, ordem alfabética e em ordem crescente. Nesse Exemplo:
     - Entrada: `GET /pokemons?consulta=pidge&ordenar=true`
@@ -29,7 +29,7 @@ A ideia por trás desse endpoint é poder pesquisar por pokémons pelo seu nome 
    
 **Comprimento**
 
-  - **Consulta null**: Se não passar a consulta: `GET /pokemons?comprimento`, a lista exibe todos os pokemons da PokeAPI ordenados por comprimento do menor nome para o maior.
+  - **Consulta null**: Se não passar a consulta: `GET /pokemons?comprimento=true`, a lista exibe todos os pokemons da PokeAPI ordenados por comprimento do menor nome para o maior.
 
   - **Consulta not null**: Se a consulta não estiver vazia, exemplo: `GET /pokemons?consulta=pidge&comprimento=true`, a lista exibe os pokemons por nome ou iniciais, por comprimento e em ordem crescente. Nesse Exemplo:
     - Entrada: `GET /pokemons?consulta=pidge&comprimento=true`
@@ -70,7 +70,7 @@ Este endpoint tem, em sua maioria, os mesmos requisitos que o primeiro (deve rec
 
 **Ordenar**
     
-  - **Consulta null**: Se não passar a consulta: `GET /pokemons/highlight?ordenar`, a lista exibe todos os pokemons da PokeAPI em ordem alfabética em ordem crescente.
+  - **Consulta null**: Se não passar a consulta: `GET /pokemons/highlight?ordenar=true`, a lista exibe todos os pokemons da PokeAPI em ordem alfabética em ordem crescente.
 
   - **Consulta not null**: Se a consulta não for vazia, exemplo: `GET /pokemons/highlight?consulta=pidge&ordenar=true`, a lista exibe os pokemons por nome ou iniciais, ordem alfabética e em ordem crescente. Nesse Exemplo:
     - Entrada: `GET /pokemons/highlight?consulta=pidge&ordenar=true`
@@ -101,7 +101,7 @@ Este endpoint tem, em sua maioria, os mesmos requisitos que o primeiro (deve rec
    
 **Comprimento**
 
-  - **Consulta null**: Se não passar a consulta: `GET /pokemons/highlight?comprimento`, a lista exibe todos os pokemons da PokeAPI ordenados por comprimento do menor nome para o maior.
+  - **Consulta null**: Se não passar a consulta: `GET /pokemons/highlight?comprimento=true`, a lista exibe todos os pokemons da PokeAPI ordenados por comprimento do menor nome para o maior.
 
   - **Consulta not null**: Se a consulta não estiver vazia, exemplo: `GET /pokemons/highlight?consulta=pidge&comprimento=true`, a lista exibe os pokemons por nome ou iniciais, por comprimento e em ordem crescente. Nesse Exemplo:
     - Entrada: `GET /pokemons/highlight?consulta=pidge&comprimento=true`
