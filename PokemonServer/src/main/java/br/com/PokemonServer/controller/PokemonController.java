@@ -19,7 +19,7 @@ public class PokemonController {
     }
 
     // Endpoint para buscar nomes de Pokémon com opções de consulta, ordenação e comprimento
-    @GetMapping("/pokemon")
+    @GetMapping("/pokemons")
     public PokemonDTO getPokemons(
         @RequestParam(name = "consulta", required = false) String consulta,
         @RequestParam(name = "ordenar", required = false) boolean ordenar,

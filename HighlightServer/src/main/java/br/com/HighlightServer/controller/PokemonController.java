@@ -12,7 +12,7 @@ import br.com.HighlightServer.domain.DestaqueReturn;
 import br.com.HighlightServer.service.PokemonService;
 
 @RestController
-@RequestMapping("/pokemon/highlight")
+@RequestMapping("/pokemons/highlight")
 public class PokemonController {
 
     private final PokemonService pokemonService;
