@@ -1,18 +1,20 @@
 ## <img width="30" height="30" src="https://img.icons8.com/color/96/youtube-play.png" alt="youtube-play"/> [Vídeo explicando um pouco do projeto](https://drive.google.com/file/d/1ZXAV-stzNiJR39Ybtutu1d96YiIDTmNo/view?usp=sharing).
 
-## Stack
+## :clipboard: Diagrama
+
+## :package: Stack
 
 - **Java 17**
 - **Spring Boot** para o framework
 - **Gradle** para gerenciamento de dependências
 - Criar um **MICROSSERVIÇO**
 
-## Requisitos funcionais
+## :file_folder: Requisitos funcionais
 
 - Consuma os dados da [PokéAPI](https://pokeapi.co/docs/v2).
 - Crie e exponha 2 endpoints:
 
-## **1. GET /pokemons**
+## :round_pushpin: **1. GET /pokemons**
 A ideia por trás desse endpoint é poder pesquisar por pokémons pelo seu nome - o usuário enviará uma parte (qualquer parte) do nome do pokémon como o parâmetro para esse endpoint, e o serviço deve responder com uma lista dos pokémons. A pesquisa deve diferenciar maiúsculas de minúsculas.
 
 - **Consulta null**: Se a consulta estiver vazia: `GET /pokemons`, a lista exibe todos os pokemons da PokeAPI.
@@ -37,7 +39,7 @@ A ideia por trás desse endpoint é poder pesquisar por pokémons pelo seu nome 
     - Entrada: `GET /pokemons?consulta=pidge&comprimento=true`
     - Saída: ```{"result" : ["pidgey", "pidgeot", "pidgeotto", "pidgeot-mega"]}```
    
-## **2. GET /pokemons/highlight**
+## :round_pushpin: **2. GET /pokemons/highlight**
 
 Este endpoint tem, em sua maioria, os mesmos requisitos que o primeiro (deve receber os mesmos parâmetros da mesma maneira), a única diferença é o requisito de resposta: ao lado do nome do pokémon, a resposta também deve destacar a substring que correspondeu ao nome do pokémon. A maneira como você deve fazer isso é cercando a substring com `<pre> </pre>`. Se a consulta estiver vazia, ela deve considerar todos os pokemons listados na PokeAPI.
 
@@ -131,7 +133,7 @@ Este endpoint tem, em sua maioria, os mesmos requisitos que o primeiro (deve rec
     ]
 }
 ```   
-## Fora do escopo:
+## :closed_book: Fora do escopo:
 
 - [Java Records](https://www.baeldung.com/java-record-keyword)
 - Qualquer biblioteca de classificação, nem qualquer coisa relacionada à classificação da Biblioteca Padrão Java/Kotlin, isso inclui: `Collections.sort`, `Collections.swap`, `Comparators`, etc.
@@ -139,7 +141,7 @@ Este endpoint tem, em sua maioria, os mesmos requisitos que o primeiro (deve rec
 - Qualquer biblioteca do agendador automático de tarefas (para tarefas recorrentes). Se você deseja implementar um recurso que usa agendamento automático de tarefas, você deve usar apenas Java/Kotlin Standard Library ou suas próprias classes e métodos.
 - AQualquer coisa que gere código automaticamente ou gere implementações automáticas para interfaces/classes abstratas, como: [Lombok](https://projectlombok.org/features/all), [Feign Client](https://docs.spring.io/spring-cloud-openfeign/docs/current/reference/html), [Retrofit2](https://square.github.io/retrofit), [Spring Repositories](https://docs.spring.io/spring-data/data-commons/docs/1.6.1.RELEASE/reference/html/repositories.html) (não confunda com [Spring Stereotypes](http://blog.triadworks.com.br/entendendo-os-stereotypes-do-spring)), etc
 
-## Requisitos não funcionais
+## :green_book: Requisitos não funcionais
 
 - Você precisa **explicar** sua lógica implementada do algoritmo de classificação usado (por exemplo, você pode usar comentários embutidos no código-fonte).
 - Explique o **Big-Ω** de seus algoritmos de classificação.
