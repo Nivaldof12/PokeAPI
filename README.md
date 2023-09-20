@@ -17,7 +17,7 @@
 - Crie e exponha 2 endpoints:
 
 ## :round_pushpin: **1. GET /pokemons**
-A ideia por trás desse endpoint é poder pesquisar por pokémons pelo seu nome - o usuário enviará uma parte (qualquer parte) do nome do pokémon como o parâmetro para esse endpoint, e o serviço deve responder com uma lista dos pokémons. A pesquisa deve diferenciar maiúsculas de minúsculas.
+A ideia por trás desse endpoint é poder pesquisar por pokémons pelo seu nome - o usuário enviará uma parte (qualquer parte) do nome do pokémon como o parâmetro para esse endpoint, e o serviço deve responder com uma lista dos pokémons. A pesquisa não deve diferenciar maiúsculas de minúsculas.
 
 - **Consulta null**: Se a consulta estiver vazia: `GET /pokemons`, a lista exibe todos os pokemons da PokeAPI.
 
