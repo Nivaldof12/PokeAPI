@@ -49,8 +49,9 @@ public class PokemonService {
     }
     /** 
      * BigΩ: sortPokemonEmOrdemAlfabetica
-     * No melhor caso, quando os Pokémon já estão em ordem alfabética, o algoritmo tem complexidade O(n). 
-     * No pior caso, quando os Pokémon estão em ordem inversa, a complexidade é O(n^2).
+     * O BigΩ deste algoritmo de classificação é O(n²).
+     * Isso significa que ele é pouco eficiente para listas maiores
+     * mas como não é o caso, serve perfeitamente.
      */    
     // Função para ordenar manualmente os Pokémon em ordem alfabética crescente pelo nome
     public void sortPokemonEmOrdemAlfabetica(List<DestaqueDTO> result) {
@@ -70,8 +71,9 @@ public class PokemonService {
     
     /** 
      * BigΩ: sortPokemonPorComprimento
-     * Pokémon já estão ordenados pelo comprimento do nome, o algoritmo terá complexidade O(n). 
-     * No entanto, no pior caso, quando os Pokémon estão em ordem inversa, a complexidade será O(n^2).
+     * O BigΩ deste algoritmo de classificação é O(n²). 
+     * Como esse algoritmo não recebe um grande volume de dados
+     * não é necessario um algoritmo de ordenação mais eficiente.
      */   
     // Função para ordenar manualmente os Pokémon em destaque por comprimento do nome
     public void sortPokemonPorComprimento(List<DestaqueDTO> result) {
