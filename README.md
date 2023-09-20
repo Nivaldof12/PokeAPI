@@ -1,3 +1,5 @@
+## <img width="30" height="30" src="https://img.icons8.com/color/96/youtube-play.png" alt="youtube-play"/> [Vídeo explicando um pouco do projeto](https://drive.google.com/file/d/1ZXAV-stzNiJR39Ybtutu1d96YiIDTmNo/view?usp=sharing).
+
 ## Stack
 
 - **Java 17**
