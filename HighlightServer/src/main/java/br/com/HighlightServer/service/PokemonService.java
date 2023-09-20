@@ -31,18 +31,6 @@ public class PokemonService {
         return destaqueDTO;
     }
     
-    // Método para obter os nomes de todos os Pokémons
-    public List<String> getBuscarTodosPokemons() {
-        List<Pokemon> TodosOsPokemons = pokemonRepository.getTodosPokemons();
-        List<String> names = new ArrayList<>();
-
-        for (Pokemon pokemon : TodosOsPokemons) {
-            names.add(pokemon.getName());
-        }
-
-        return names;
-    }
-    
     // Retorna uma lista de DTO por consulta e método <pre></pre>
     public List<DestaqueDTO> getPokemonsPorConsulta(String consulta) {
         final String pesquisaNome = consulta.toLowerCase();
@@ -96,27 +84,6 @@ public class PokemonService {
                     // Troca os Pokémon se estiverem fora de ordem
                     result.set(i, pokemon2);
                     result.set(j, pokemon1);
-                }
-            }
-        }
-    }
-    
-  /**
-  * BigΩ: sortOrdenarLista  
-  * Quando a lista está muito desordenada, o algoritmo faz várias passagens pela lista, 
-  * resultando em uma complexidade O(n^2).
-  * 
-  */
-    
- // Retorna a lista em ordem alfabética em ordem crescente
-    public void sortOrdenarLista(List<String> list) {
-    	// for duplo para comparar os elementos da lista e trocá-los de posição se estiverem fora de ordem
-        for (int i = 0; i < list.size() - 1; i++) {
-            for (int j = i + 1; j < list.size(); j++) {
-                if (list.get(i).compareToIgnoreCase(list.get(j)) > 0) {
-                    String temp = list.get(i);
-                    list.set(i, list.get(j));
-                    list.set(j, temp);
                 }
             }
         }
