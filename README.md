@@ -1,5 +1,3 @@
-## <img width="30" height="30" src="https://img.icons8.com/color/96/youtube-play.png" alt="youtube-play"/> [Vídeo explicando um pouco do projeto](https://drive.google.com/file/d/1ZXAV-stzNiJR39Ybtutu1d96YiIDTmNo/view?usp=sharing).
-
 ## :clipboard: Diagrama
 <img width="10000" alt="Looqbox Challenge" src="https://github.com/Nivaldof12/PokeAPI/assets/88409759/ab303392-6d44-4063-9ba8-8685b0c16305">
 <p align="center"><a href="https://www.figma.com/file/o9sYG7wZtfNtUZInkuofp7/Looqbox-Challenge?type=whiteboard&node-id=0%3A1&t=GUEn77U09s9TLIcc-1">Ver Diagrama</a></p>
