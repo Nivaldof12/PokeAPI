@@ -141,6 +141,7 @@ Este endpoint tem, em sua maioria, os mesmos requisitos que o primeiro (deve rec
 - Qualquer biblioteca do agendador automático de tarefas (para tarefas recorrentes). Se você deseja implementar um recurso que usa agendamento automático de tarefas, você deve usar apenas Java/Kotlin Standard Library ou suas próprias classes e métodos.
 - AQualquer coisa que gere código automaticamente ou gere implementações automáticas para interfaces/classes abstratas, como: [Lombok](https://projectlombok.org/features/all), [Feign Client](https://docs.spring.io/spring-cloud-openfeign/docs/current/reference/html), [Retrofit2](https://square.github.io/retrofit), [Spring Repositories](https://docs.spring.io/spring-data/data-commons/docs/1.6.1.RELEASE/reference/html/repositories.html) (não confunda com [Spring Stereotypes](http://blog.triadworks.com.br/entendendo-os-stereotypes-do-spring)), etc
 
+
 ## :green_book: Requisitos não funcionais
 
 - Você precisa **explicar** sua lógica implementada do algoritmo de classificação usado (por exemplo, você pode usar comentários embutidos no código-fonte).
